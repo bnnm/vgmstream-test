@@ -1,3 +1,13 @@
+# for whatever reason some combos of emscripten + vorbis fail during detection of these
+if(EMSCRIPTEN)
+	set(SIZE16 int16_t)
+	set(USIZE16 uint16_t)
+	set(SIZE32 int32_t)
+	set(USIZE32 uint32_t)
+	set(SIZE64 int64_t)
+	set(USIZE64 uint64_t)
+endif()
+
 if(NOT WIN32 AND USE_VORBIS)
 	if(NOT OGG_PATH)
 		find_package(Ogg QUIET)
